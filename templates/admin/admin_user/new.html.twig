@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AdminUser{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="title">Créer un administrateur</h1>
+
+        <div class="form-container">
+            {{ include('admin/admin_user/_form.html.twig') }}
+        </div>
+
+        <div class="back-to-list mt-3">
+            <a href="{{ path('app_admin_user_index') }}" class="btn btn-secondary">Retour</a>
+        </div>
+    </div>
+{% endblock %}

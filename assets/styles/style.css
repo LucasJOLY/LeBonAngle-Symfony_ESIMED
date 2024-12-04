@@ -1,0 +1,406 @@
+
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+
+.table-show th{
+    width: 30%;
+
+}
+
+.table th {
+    background-color: #f6741b;
+    color: white;
+    font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table .no-records {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-show {
+    background-color: #17a2b8;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+}
+
+.btn-new {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-advert{
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
+.action-buttons {
+    text-align: center;
+}
+.create-new {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.btn-form{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    background-color: #28a745;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    text-decoration: none;
+    width: 200px;
+    font-size: 18px;
+
+}
+
+
+
+
+.form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #f6741b;
+    box-shadow: 0 0 5px rgba(246, 116, 27, 0.5);
+    outline: none;
+}
+
+.form-group{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+}
+
+
+.back-to-list {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.btn-delete {
+    margin-top: 10px;
+    border: none;
+    background-color: #dc3545;
+}
+
+
+.btn-danger{
+    border: none;
+    background-color: #dc3545;
+}
+
+
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+
+
+
+
+
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+
+.login-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group-login {
+    margin-bottom: 15px;
+}
+
+.form-label-login {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-control-login {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-control-login:focus {
+    border-color: #f6741b;
+    box-shadow: 0 0 5px rgba(246, 116, 27, 0.5);
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #f6741b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #d95d0b;
+}
+
+.alert-login {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger-login {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+
+.btn-tertiary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.btn-tertiary:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.dashboard-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.dashboard-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-icon {
+    font-size: 24px;
+}
+
+.menu-text {
+    flex: 1;
+    text-align: left;
+}
+
+
+.menu-item:hover {
+    background-color: #f6741b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.menu-item:hover .menu-icon {
+    color: white;
+}
+
+
+
+.logout-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logout-form {
+    display: inline-block;
+}
+
+
+.photo-gallery {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: start;
+}
+
+.photo-item {
+    flex: 1 0 calc(33.333% - 10px);
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.photo-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+
+
+.waiting_state{
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.published_state{
+    color: #10b981;
+    font-weight: bold;
+}
+
+.rejected_state{
+    color: #ef4444;
+    font-weight: bold;
+}
+
+
+

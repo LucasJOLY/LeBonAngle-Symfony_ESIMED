@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="login-container">
+        <h1 class="login-title">Connexion Admin</h1>
+
+        {% if error %}
+            <div class="alert-login alert-danger-login">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+        <form action="{{ path('admin_login') }}" method="post" class="login-form">
+            <div class="form-group-login">
+                <label for="username" class="form-label-login">Email:</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required autofocus class="form-control-login">
+            </div>
+            <div class="form-group-login">
+                <label for="password" class="form-label-login">Mot de passe:</label>
+                <input type="password" id="password" name="_password" required class="form-control-login">
+            </div>
+            <button type="submit" class="btn btn-primary login-button">Login</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>Liste des Catégories</h1>
+
+    {% for label, messages in app.flashes %}
+        <div class="alert alert-{{ label }} flash-message">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>
+                    <a href="{{ path('app_admin_category_edit', {'id': category.id}) }}" class="btn btn-edit">Modifier</a>
+                    <form action="{{ path('app_admin_category_delete', {'id': category.id}) }}" method="post" style="display:inline-block;">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr ?')">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucune catégorie trouvée.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {{ knp_pagination_render(categories) }}
+
+
+
+    <div class="create-new">
+    <a href="{{ path('app_admin_category_new') }}" class="btn btn-new">Créer une nouvelle catégorie</a>
+    </div>
+    <div class="back-to-list">
+        <a href="{{ path('admin_dashboard') }}" class="btn btn-secondary">Retour au menu</a>
+    </div>
+</div>
+{% endblock %}

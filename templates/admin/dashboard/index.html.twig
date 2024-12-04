@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="dashboard-container">
+        <h1 class="dashboard-title">Bonjour, {{ admin_user.username }}</h1>
+        <nav class="dashboard-menu">
+            <a href="{{ path('app_admin_user_index') }}" class="menu-item">
+                <span class="menu-icon">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+                <span class="menu-text">Gestion des administrateurs</span>
+                <a href="{{ path('app_admin_category_index') }}" class="menu-item">
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-list"></i>
+                    </span>
+                    <span class="menu-text">Gestion des catégories</span>
+                </a>
+                <a href="{{ path('app_admin_advert_index') }}" class="menu-item">
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </span>
+                    <span class="menu-text">Gestion des annonces</span>
+                </a>
+            </a>
+
+        </nav>
+        <div class="logout-container">
+            <form action="{{ path('admin_logout') }}" method="post" class="logout-form">
+                <button type="submit" class="btn btn-danger">
+                    <i class="fa-solid fa-right-from-bracket"></i> Déconnexion
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Advert{% endblock %}
+
+{% block body %}
+    <h1>Advert</h1>
+
+    <table class="table table-show">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ advert.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ advert.title }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ advert.content }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ advert.author }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ advert.email }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ advert.price }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>
+                    {% if advert.state == 'draft' %}
+                        <div class="waiting_state"
+                        >En attente de publication</div>
+                    {% elseif advert.state == 'published' %}
+                        <div class="published_state"
+                        >Publiée</div>
+                    {% elseif advert.state == 'rejected' %}
+                        <div class="rejected_state"
+                        >Rejetée</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ advert.category.name }}</td>
+            </tr>
+            <tr>
+                <th>Nombre de photos</th>
+                <td>{{ advert.photos|length }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="photo-gallery">
+        <h2>Photos</h2>
+        <div class="photo-container">
+            {% for picture in advert.photos %}
+                <div class="photo-item">
+                    <img src="{{ asset('uploads/pictures/' ~ picture.path) }}" alt="Photo {{ picture.id }}">
+                </div>
+            {% else %}
+                <p>Aucune photo disponible pour cette annonce.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <a  class="btn btn-secondary" href="{{ path('app_admin_advert_index') }}">Retour</a>
+    {% if advert.state == 'draft' %}
+        <form action="{{ path('app_admin_advert_publish', {'id': advert.id}) }}" method="post" style="display: inline;">
+            <button type="submit" class="btn btn-new">Publier</button>
+        </form>
+    {% endif %}
+    {% if advert.state in ['draft', 'published'] %}
+        <form action="{{ path('app_admin_advert_reject', {'id': advert.id}) }}" method="post" style="display: inline;">
+            <button type="submit" class="btn btn-danger">Rejeter</button>
+        </form>
+    {% endif %}
+{% endblock %}

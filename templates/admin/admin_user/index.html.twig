@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AdminUser Index{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="title">Liste des administrateurs</h1>
+
+        <!-- Affichage des messages flash -->
+        {% for label, messages in app.flashes %}
+            <div class="alert alert-{{ label }} flash-message">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+        <table class="table admin-table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom d'utilisateur</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for admin_user in admin_users %}
+                <tr>
+                    <td>{{ admin_user.id }}</td>
+                    <td>{{ admin_user.username }}</td>
+                    <td>{{ admin_user.email }}</td>
+                    <td class="action-buttons">
+                        <a href="{{ path('app_admin_user_show', {'id': admin_user.id}) }}" class="btn btn-show">Voir</a>
+                        <a href="{{ path('app_admin_user_edit', {'id': admin_user.id}) }}" class="btn btn-edit">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4" class="no-records">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+
+        <div class="create-new">
+            <a href="{{ path('app_admin_user_new') }}" class="btn btn-new">Ajouter</a>
+        </div>
+        <div class="back-to-list">
+            <a href="{{ path('admin_dashboard') }}" class="btn btn-secondary">Retour au menu</a>
+        </div>
+    </div>
+{% endblock %}

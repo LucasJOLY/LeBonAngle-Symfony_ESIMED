@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AdminUser{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <div class="form-container">
+        {{ include('admin/admin_user/_form.html.twig', {'button_label': 'Mettre a jour'}) }}
+    </div>
+
+<div class="back-to-list mt-3">
+    <a class="btn btn-secondary" href="{{ path('app_admin_user_index') }}">Retour</a>
+</div>
+</div>
+{% endblock %}
