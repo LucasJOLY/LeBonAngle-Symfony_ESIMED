@@ -16,13 +16,10 @@ class AdvertCreationListener
     private MailerInterface $mailer;
     private AdminUserRepository $adminUserRepository;
 
-    private BodyRendererInterface $bodyRenderer;
-
-    public function __construct(MailerInterface $mailer, AdminUserRepository $adminUserRepository, BodyRendererInterface $bodyRenderer)
+    public function __construct(MailerInterface $mailer, AdminUserRepository $adminUserRepository)
     {
         $this->mailer = $mailer;
         $this->adminUserRepository = $adminUserRepository;
-        $this->bodyRenderer = $bodyRenderer;
     }
 
     public function postPersist(Advert $entity): void
@@ -51,10 +48,6 @@ class AdvertCreationListener
                 'publishUrl' => $publishUrl,
                 'rejectUrl' => $rejectUrl,
             ]);
-
-        $this->bodyRenderer->render($emailMessage);
-
-
         $this->mailer->send($emailMessage);
     }
 }

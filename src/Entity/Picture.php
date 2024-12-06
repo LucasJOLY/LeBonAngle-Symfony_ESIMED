@@ -51,9 +51,6 @@ class Picture
     #[ORM\Column]
     private ?int $id = null;
 
-
-
-
     #[Vich\UploadableField(mapping: 'picture_uploads', fileNameProperty: 'path')]
     #[Assert\File(
         maxSize: '2M',
